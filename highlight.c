@@ -102,6 +102,8 @@ static void highlight_init() {
 
     /* Add our commands for highlighting. */
     cmd_add("highlight", "", 0, 0, highlight_command, NULL);
+
+    cmd_set_safe("highlight", TRUE);
 }
 
 static void highlight_uninit() {
