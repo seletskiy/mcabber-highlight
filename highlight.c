@@ -56,7 +56,11 @@ static guint highlight_process_message(const gchar *hook, hk_arg_t *args, gpoint
             /* Set the attention flag if necessary. */
             scr_setattentionflag_if_needed(jid, FALSE, ROSTER_UI_PRIO_ATTENTION_MESSAGE, prio_max);
 
+#if defined HOOK_HANDLER_RESULT_HIGHLIGHT_MESSAGE
             return HOOK_HANDLER_RESULT_HIGHLIGHT_MESSAGE;
+#else
+            break;
+#endif
         }
     }
 
